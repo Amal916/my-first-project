@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Checker</title>
+</head>
+<body>
+    <h1>Check Whether a String is Palindrome</h1>
+    <label for="palindromeString">Enter a string:</label>
+    <input type="text" id="palindromeString" />
+    <button onclick="checkPalindrome()">Check</button>
+    <h2>Result:</h2>
+    <div id="palindromeResult"></div>
+    <script>
+         function checkPalindrome() {
+            const str = document.getElementById('palindromeString').value.trim();
+            if (!str) {
+                document.getElementById('palindromeResult').innerText = "Please enter a valid string.";
+                return;
+            }
+
+            const reversed = str.split('').reverse().join('');
+            const isPalindrome = str === reversed;
+
+            document.getElementById('palindromeResult').innerText = isPalindrome
+                ? `"${str}" is a palindrome.`
+                : `"${str}" is not a palindrome.`;
+        }
+    </script>
+</body>
+</html>

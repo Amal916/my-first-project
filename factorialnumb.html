@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Checker</title>
+</head>
+<body>
+    <h1>Find the Factorial of a Number</h1>
+    <label for="factorialNumber">Enter a number:</label>
+    <input type="number" id="factorialNumber" />
+    <button onclick="findFactorial()">Calculate Factorial</button>
+    <h2>Result:</h2>
+    <div id="factorialResult"></div>
+
+    <!-- ...existing code... -->
+    <script>
+        function findFactorial() {
+            const num = parseInt(document.getElementById('factorialNumber').value);
+            if (isNaN(num) || num < 0) {
+                document.getElementById('factorialResult').innerText = "Please enter a valid non-negative integer.";
+                return;
+            }
+
+            let factorial = 1;
+            for (let i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+
+            document.getElementById('factorialResult').innerText = `Factorial of ${num} is ${factorial}.`;
+        }
+    </script>    
+</body> 
+</html>
